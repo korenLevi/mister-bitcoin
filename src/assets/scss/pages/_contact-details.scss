@@ -1,0 +1,34 @@
+.contact-details-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a{
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .back-icon {
+        height: 50px;
+        color: white;
+        background-color: #57b3f5;
+        width: 50px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 3;
+    }
+    .edit-icon{
+    }
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    margin-left: 50px;
+    margin-top: 50px;
+
+    img {
+        height: 70px;
+        width: 80px;
+        border-radius: 50%;
+    }
+}

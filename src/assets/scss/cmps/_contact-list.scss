@@ -1,0 +1,19 @@
+.contact-list{
+    // display: grid;
+    // grid-template-columns:1fr 1fr 1fr 1fr;
+    // gap: 15px;
+    // grid-auto-rows: minmax(150px, auto);
+    // width: 60%;
+    // margin: 0 auto;
+    
+
+
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-gap: 15px;
+    gap: 15px;
+    grid-auto-rows: minmax(114px, auto);
+    width: 60%;
+    margin: 0 auto;
+}
