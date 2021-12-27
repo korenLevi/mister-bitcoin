@@ -11,6 +11,7 @@ function _AppHeader(props) {
                 <nav>
                     <NavLink activeClassName="my-active" exact to='/'>Home</NavLink>
                     <NavLink activeClassName="my-active" to='/contacts'>Contacts</NavLink>
+                    <NavLink activeClassName="my-active" exact to='/statistic'>Statistic</NavLink>
                 </nav>
             </section>
         </header>

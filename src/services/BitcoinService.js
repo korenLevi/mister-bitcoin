@@ -2,6 +2,7 @@ import axios from "axios"
 
 export const BitcoinService = {
     getRate,
+    getMarketPrice
 }
 
 const BC_API = 'https://blockchain.info/tobtc?currency=USD&value='
@@ -13,7 +14,9 @@ function getRate(coins) {
 }
 
 function getMarketPrice() {
-
+const crypro = require('../data/market-price-new.json')
+console.log('crypro',crypro);
+return crypro
 }
 
 function getConfirmedTransactions() {

@@ -8,6 +8,7 @@ import { ContactDetails } from './pages/ContactDetails';
 import { AppHeader } from './cmps/AppHeader';
 // import { ContactsFilter } from './cmps/ContactsFilter';
 import { ContactEdit } from './pages/ContactEdit';
+import { Statistic } from './pages/Statistic';
 export function App() {
   return (
     <Router >
@@ -17,6 +18,7 @@ export function App() {
           <Switch>
             <Route exact component={HomePage} path="/" />
             <Route exact component={Contacts} path="/contacts" />
+            <Route exact component={Statistic} path="/statistic" />
             <Route exact component={ContactDetails} path="/contact/:id" />
             <Route exact component={ContactEdit} path="/contact/edit/:id" />
           </Switch>
