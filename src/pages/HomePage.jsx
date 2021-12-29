@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { userService } from '../services/UserService'
+import { userService } from '../services/userService'
 import { BitcoinService } from '../services/BitcoinService'
 import {Contact} from './Contacts'
 // import { HashRouter,Route, Switch, NavLink} from 'react-router-dom'
@@ -12,11 +12,12 @@ export class HomePage extends Component {
         BTC: null,
     }
     componentDidMount() {
+        console.log(this.props);
         this.loadUser()
     }
 
     async loadUser() {
-        const user = await userService.getUser()
+        const user = await userService.getLoggedinUser()
         console.log('user', user);
         this.setState({ user });
         BitcoinService.getRate(this.state.user.coins)
@@ -30,10 +31,9 @@ export class HomePage extends Component {
         if (!user) return <div>Loading..</div>
         return (
             <div>
-                <header>
+                {/* <header>
                    <Link to="/contact" >Contacts</Link>
-                   {/* <NavLink to="/contacts" exact>Contacts</NavLink>    */}
-                </header>
+                </header> */}
                 <div className="user-details">
                     <h1>Hello {user.name}</h1>
 

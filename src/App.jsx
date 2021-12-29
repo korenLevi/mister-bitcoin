@@ -9,18 +9,25 @@ import { AppHeader } from './cmps/AppHeader';
 // import { ContactsFilter } from './cmps/ContactsFilter';
 import { ContactEdit } from './pages/ContactEdit';
 import { Statistic } from './pages/Statistic';
+// import { BitcoinApp } from './pages/BitcoinApp'
+import { SignUp } from './pages/SignUp';
+// import React from 'react';
+
 export function App() {
+
+  
   return (
     <Router >
       <div className="App">
-        <AppHeader/>
-        <main>
-          <Switch>
-            <Route exact component={HomePage} path="/" />
+        <AppHeader />
+        <main className="main-container">
+          <Switch>SignUp
+            <Route exact component={ContactEdit} path="/contact/edit/:id?" />
+            <Route exact component={SignUp} path="/" />
+            <Route exact component={HomePage} path="/home" />
             <Route exact component={Contacts} path="/contacts" />
             <Route exact component={Statistic} path="/statistic" />
             <Route exact component={ContactDetails} path="/contact/:id" />
-            <Route exact component={ContactEdit} path="/contact/edit/:id" />
           </Switch>
         </main>
       </div>

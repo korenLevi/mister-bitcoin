@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { contactService } from '../services/contactService'
-export class ContactEdit extends Component {
+// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { connect } from 'react-redux'
+import { addContact } from '../store/actions/contactActions'
+class _ContactEdit extends Component {
 
     state = {
         contact:null,
@@ -11,12 +14,15 @@ export class ContactEdit extends Component {
     async componentDidMount(){
         const contactId = this.props.match.params.id
         console.log('contactId',contactId);
-        const contact = await contactService.getContactById(contactId);
+        const contact = (contactId) 
+         ? await contactService.getContactById(contactId)
+        : contactService.getEmptyContact()
         this.setState({ contact })
-        console.log(this.props);
+        // console.log(this.props);
         // , () => this.inputRef.current.focus()
     }
     handleChange = ({ target }) => {
+        console.log('this.state.contact',this.state.contact);
         const field = target.name
         const value = target.type === 'number' ? +target.value : target.value
         this.setState(prevState => ({ contact: { ...prevState.contact, [field]: value } }))
@@ -26,11 +32,12 @@ export class ContactEdit extends Component {
         ev.preventDefault()
         await contactService.saveContact({...this.state.contact})
         this.props.history.goBack()
-        // this.props.history.push(`/`)
+        // this.props.history.push(`/contacts`)
     }
     render() {
         const {contact} = this.state
         if(!contact) return <div>Loading...</div>
+
         return (
             <div className="contact-edit">
                 <form className="contact-container" onSubmit={this.onSaveContact}>
@@ -48,3 +55,20 @@ export class ContactEdit extends Component {
         )
     }
 }
+
+
+const mapStateToProps = state => {
+    return {
+      contact: state.contactModule.contact,
+    }
+  }
+  
+  const mapDispatchToProps = {
+    addContact,
+  }
+  
+  export const ContactEdit = connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(_ContactEdit)
+  

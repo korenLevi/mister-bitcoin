@@ -4,15 +4,15 @@ import { ContactPreview } from './ContactPreview';
 // }
 import React from 'react'
 
-export function ContactList({contacts}) {
+export function ContactList({contacts,history}) {
     // const {contacts} = this.props
     if(!contacts) return <div>Loading...</div>
     return (
        
             <section className="contact-list">
-                {/* <h1>fff</h1> */}
+                <h1>Contacts List</h1>
                 {contacts.map(contact =>    
-                  <ContactPreview contact={contact} key={contact._id}/>
+                  <ContactPreview contact={contact} history={history} key={contact._id}/>
                    )
                }
                
