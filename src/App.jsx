@@ -20,6 +20,7 @@ export function App() {
     <Router >
       <div className="App">
         <AppHeader />
+        
         <main className="main-container">
           <Switch>SignUp
             <Route exact component={ContactEdit} path="/contact/edit/:id?" />

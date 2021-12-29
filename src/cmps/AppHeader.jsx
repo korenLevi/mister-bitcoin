@@ -29,17 +29,20 @@ function _AppHeader(props) {
     return (
         <header className='app-header'>
             <section className='container'>
-                <section className="back-container">
+                {/* <section className="back-container">
                     <button onClick={props.history.goBack}>Back</button>
                     <button onClick={logout}>Log out</button>
-                </section>
+                </section> */}
+                <div className="header-title">Mister Bitcoin</div>
                 <nav>
                     <NavLink activeClassName="my-active" exact to='/home'>Home</NavLink>
                     <NavLink activeClassName="my-active" to='/contacts'>Contacts</NavLink>
                     <NavLink activeClassName="my-active" exact to='/statistic'>Statistic</NavLink>
                     <NavLink activeClassName="my-active" exact to='/'>Sign up</NavLink>
+                    <a className="logout-btn" onClick={logout}>Log out</a>
                 </nav>
             </section>
+            {/* <hr /> */}
         </header>
     )
 }

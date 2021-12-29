@@ -31,7 +31,7 @@ export class SignUp extends Component {
         const { name } = this.state
         return (
             <div className="signup-page">
-                <div>
+              
                     <img src={coinsImg} />
                     <form onSubmit={this.signUp}>
                         <label htmlFor="name">Please enter toyr name:</label>
@@ -39,7 +39,7 @@ export class SignUp extends Component {
                         <button>Sign Up</button>
                         {/* <input type="submit" value="Sign up" /> */}
                     </form>
-                </div>
+                
             </div>
         )
     }
